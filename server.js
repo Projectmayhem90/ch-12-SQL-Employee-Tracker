@@ -2,10 +2,9 @@ const inquirer = require('inquirer');
 const mysql = require('mysql2');
 
 
-
 const db = mysql.createConnection(
     {
-        host: '',
+        host: 'localhost',
         user: 'root',
         password: '',
         database: '',
@@ -14,7 +13,7 @@ const db = mysql.createConnection(
 
 );
 
-// Need to code employee list menu 
+// Need to code employee list menu // All features 01-27-23
 function startPrompt() {
     inquirer.prompt({
         type: 'list',
@@ -121,6 +120,12 @@ startPrompt();
 function stopPrompt() {
     connection.end();
 };
+
+app.listen(3000, '127.0.0.1');
+console.log('Node server running on port 3000');
+
+const PORT = process.env.PORT || 3001;
+
 //return
 
 // Function here to how user iwll use application
