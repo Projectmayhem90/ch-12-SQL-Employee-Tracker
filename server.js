@@ -1,19 +1,18 @@
-const inquirer = require('inquirer');
-const mysql = require('mysql2');
-
+const inquirer = require("inquirer");
+const mysql = require("mysql2");
+const consoleTable = require('console.table');
+const PORT = process.env.PORT || 3001;
 
 const db = mysql.createConnection(
     {
         host: 'localhost',
         user: 'root',
-        password: 'pw1234',
-        database: 'employee_db',
+        password: 'pw5253',
+        database: 'employee_db'
     },
-    console.log('connected to the database')
-
+    console.log('Connected to the employee db')
 );
 
-// Need to code employee list menu // All features 01-27-23
 function startPrompt() {
     inquirer.prompt({
         type: 'list',
@@ -120,23 +119,3 @@ startPrompt();
 function stopPrompt() {
     connection.end();
 };
-
-app.listen(3000, '127.0.0.1');
-console.log('Node server running on port 3000');
-
-const PORT = process.env.PORT || 3001;
-
-//return
-
-// Function here to how user iwll use application
-
-
-//function to show employee data
-
-//fucntion for different roles
-//department
-
-//function to add employee to list and table
-//add role
-//add department
-
